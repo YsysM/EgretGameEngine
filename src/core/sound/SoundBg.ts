@@ -66,7 +66,8 @@ class SoundBg extends BaseSound implements ISoundBg {
         if (!this._pausePosition) {
             return;
         }
-        this._currSound.play(this._pausePosition);
+        this._currSoundChannel = this._currSound.play(this._pausePosition);
+        this._currSoundChannel.volume = this._volume;
         this._pausePosition = null;
     }
 
